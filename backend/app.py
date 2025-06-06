@@ -17,8 +17,3 @@ def generate_reply_route():
     reply = generate_reply(data['subject'], data['body'])
     return jsonify({"reply": reply})
 
-@app.route("/send-email", methods=["POST"])
-def send_email_route():
-    data = request.get_json()
-    success = send_email(data['to'], data['subject'], data['content'])
-    return jsonify({"success": success})
